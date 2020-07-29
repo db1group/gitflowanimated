@@ -1,5 +1,8 @@
-An Experimental try in React to visualize and animate Gitflow.
 
-Try it here: [https://veerasundar.com/blog/2018/03/gitflow-animated/](https://veerasundar.com/blog/2018/03/gitflow-animated/)
+## DB1 Gitflow Animated
 
-![Gitflow animated](https://i.imgur.com/c2rZy5E.gif)
+
+#### Base of project
+This project its based of the repository [gitflowanimated](https://github.com/vraa/gitflowanimated)
+
+Thanks allow the use [Veera](https://github.com/vraa)

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {Button, ButtonIcon, fallDownAnimation, fadeIn} from "./global-styles";
 import GoeyFilter from "./goey-filter";
 import Connections from "./connections";
+import LogoImage from "./img/logo.png";
 
 const GitFlowElm = styled.div`
     margin: 0 auto;
@@ -16,15 +17,20 @@ const GlobalActions = styled.div`
 `;
 
 const ProjectElm = styled.div`
-    position: relative;
+    position: fixed;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 90px 1fr;
     margin-top: 20px;
-    background: linear-gradient(135deg, rgba(34,52,122,1) 0%,rgba(23,35,82,1) 100%);
+    background: linear-gradient(135deg, #3099b7 0%,#106d99 100%);
     border-radius: 5px;
     box-shadow: 0 4px 10px #9d9d9d;
     overflow: auto;
+    top: 35px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    
 `;
 
 const GridColumn = styled.div`
@@ -38,8 +44,8 @@ const BranchHeader = styled.div`
     max-width: 90px;
     padding: 5px;
     text-align: center;
-    background-color: #131d45;
-    border-right: 1px solid #1b295f;
+    background-color: #00335d;
+    border-right: 1px solid #00335d;
     color: #f0f0f0;
     z-index: 1;
     margin-bottom: 10px;
@@ -69,7 +75,7 @@ const Commits = styled.ol`
     height: ${p => p.height || '500px'};
     filter: url('#goo');
     z-index: 40;
-    border-right: 1px solid #1b295f;
+    border-right: 1px solid #00335d;
     transition: opacity .5s;
 `;
 
@@ -110,6 +116,14 @@ const ConnectionsContainer = styled.div`
     width: 100%;
     height: 100%;
     z-index: 30;
+`;
+
+const Logo = styled.img`
+    position: fixed;
+    z-index: 2;
+    right: 70px;
+    top: 140px;
+    height: 50px;
 `;
 
 
@@ -373,6 +387,9 @@ class GitFlow extends Component {
                     <Button onClick={this.props.onNewFeature}>New Feature</Button>
                 </GlobalActions>
                 <ProjectElm>
+                    <Logo
+                        src={LogoImage}
+                    />
                     {this.renderBranchHeaders(param)}
                     {this.renderBranchCommits(param)}
                 </ProjectElm>
